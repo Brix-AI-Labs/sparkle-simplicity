@@ -50,10 +50,20 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center gap-4 mt-4">
-                  <Link to="https://facebook.com" className="text-primary hover:text-primary/80">
+                  <Link 
+                    to="https://www.facebook.com/profile.php?id=100086503906009" 
+                    className="text-primary hover:text-primary/80"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Facebook className="w-6 h-6" />
                   </Link>
-                  <Link to="https://instagram.com" className="text-primary hover:text-primary/80">
+                  <Link 
+                    to="https://www.instagram.com/megalight27" 
+                    className="text-primary hover:text-primary/80"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Instagram className="w-6 h-6" />
                   </Link>
                 </div>
