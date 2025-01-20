@@ -1,29 +1,34 @@
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
   const products = [
     {
+      id: "floor-cleaner",
       name: "Floor Cleaner",
       description: "Premium floor cleaner that leaves your floors sparkling clean with a long-lasting fragrance. Effective on all types of floors.",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/b5eee124-e677-477e-bf6b-466b152bd2ab.png",
       features: ["All-purpose cleaner", "Long-lasting fragrance", "Kills 99.9% germs"]
     },
     {
+      id: "liquid-blue",
       name: "Liquid Blue",
       description: "Advanced whitening solution for brighter and cleaner clothes. Safe on all fabrics and removes tough stains.",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/f2c31937-21d6-419f-9ba7-fa55880ceeb1.png",
       features: ["Brightens whites", "Removes tough stains", "Fabric safe"]
     },
     {
+      id: "detergent-powder",
       name: "Detergent Powder",
       description: "High-performance washing powder with superior cleaning power. Perfect for both machine and hand wash.",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/c5f0b70a-4a5d-4efd-86e3-ad8342fd2994.png",
       features: ["Superior cleaning", "Fresh fragrance", "Machine & hand wash"]
     },
     {
+      id: "bleaching-powder",
       name: "Bleaching Powder",
       description: "Powerful bleaching powder for effective disinfection and cleaning. Ideal for commercial and household use.",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/95e6e5bd-b034-4a80-9a71-dd0cc4a20887.png",
       features: ["Strong disinfectant", "Multi-purpose", "Commercial grade"]
     }
   ];
@@ -48,7 +53,7 @@ const Products = () => {
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
@@ -61,12 +66,12 @@ const Products = () => {
                   </li>
                 ))}
               </ul>
-              <a 
-                href="#" 
+              <Link 
+                to={`/product/${product.id}`}
                 className="inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm font-medium"
               >
                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              </Link>
             </div>
           ))}
         </div>
