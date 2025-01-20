@@ -122,9 +122,10 @@ const Products = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
-            <div 
+            <Link 
+              to={`/product/${product.id}`}
               key={index}
-              className="group relative overflow-hidden rounded-xl bg-highlight p-6 transition-all duration-300 hover:shadow-lg"
+              className="block group relative overflow-hidden rounded-xl bg-highlight p-6 transition-all duration-300 hover:shadow-lg"
             >
               <div className="aspect-square mb-6 overflow-hidden rounded-lg bg-white">
                 <img 
@@ -159,13 +160,10 @@ const Products = () => {
                 </div>
               </div>
               
-              <Link 
-                to={`/product/${product.id}`}
-                className="inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm font-medium"
-              >
+              <div className="inline-flex items-center text-primary group-hover:text-primary/80 transition-colors text-sm font-medium">
                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
