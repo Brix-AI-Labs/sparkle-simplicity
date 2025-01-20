@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const blogPosts = [
+export const blogPosts = [
   {
     id: 1,
     title: "The Power of Natural Cleaning Solutions",
