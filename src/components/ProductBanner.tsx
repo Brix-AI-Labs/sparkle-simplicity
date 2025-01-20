@@ -26,15 +26,15 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
         alt={`${productId} banner`}
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 flex items-center">
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
         <div className="text-white p-8 max-w-2xl">
           <div className="space-y-4 animate-fade-up">
-            <h1 className="text-5xl font-bold uppercase tracking-tight text-primary">
+            <h1 className="text-5xl font-bold uppercase tracking-tight">
               Mega Light
               <br />
               {productId.split('-').join(' ')}
             </h1>
-            <p className="text-xl font-light leading-relaxed text-accent">
+            <p className="text-xl font-light leading-relaxed">
               {slogans[productId as keyof typeof slogans]}
             </p>
           </div>
