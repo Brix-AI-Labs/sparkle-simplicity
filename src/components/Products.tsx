@@ -7,28 +7,28 @@ const Products = () => {
       id: "floor-cleaner",
       name: "Floor Cleaner",
       description: "Premium floor cleaner that leaves your floors sparkling clean with a long-lasting fragrance. Effective on all types of floors.",
-      image: "/lovable-uploads/b5eee124-e677-477e-bf6b-466b152bd2ab.png",
+      image: "/lovable-uploads/27c54fb4-d57f-47bd-aa74-526a660110ae.png",
       features: ["All-purpose cleaner", "Long-lasting fragrance", "Kills 99.9% germs"]
     },
     {
       id: "liquid-blue",
       name: "Liquid Blue",
       description: "Advanced whitening solution for brighter and cleaner clothes. Safe on all fabrics and removes tough stains.",
-      image: "/lovable-uploads/f2c31937-21d6-419f-9ba7-fa55880ceeb1.png",
+      image: "/lovable-uploads/9f3e17cc-b117-4015-8ef0-4325c497b4aa.png",
       features: ["Brightens whites", "Removes tough stains", "Fabric safe"]
     },
     {
       id: "detergent-powder",
       name: "Detergent Powder",
       description: "High-performance washing powder with superior cleaning power. Perfect for both machine and hand wash.",
-      image: "/lovable-uploads/c5f0b70a-4a5d-4efd-86e3-ad8342fd2994.png",
+      image: "/lovable-uploads/be4ba8ee-4ecb-4673-b35d-5602a3aa3640.png",
       features: ["Superior cleaning", "Fresh fragrance", "Machine & hand wash"]
     },
     {
       id: "bleaching-powder",
       name: "Bleaching Powder",
       description: "Powerful bleaching powder for effective disinfection and cleaning. Ideal for commercial and household use.",
-      image: "/lovable-uploads/95e6e5bd-b034-4a80-9a71-dd0cc4a20887.png",
+      image: "/lovable-uploads/cf965368-4d90-4acb-9d4f-53264d8ebecd.png",
       features: ["Strong disinfectant", "Multi-purpose", "Commercial grade"]
     }
   ];
