@@ -5,6 +5,8 @@ import Products from '../components/Products';
 import Testimonials from '../components/Testimonials';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import WhyChooseUs from '../components/WhyChooseUs';
+import GroupCompanies from '../components/GroupCompanies';
 
 const Index = () => {
   return (
@@ -13,7 +15,9 @@ const Index = () => {
       <Hero />
       <Features />
       <Products />
+      <WhyChooseUs />
       <About />
+      <GroupCompanies />
       <Testimonials />
       <Contact />
     </div>
