@@ -10,22 +10,55 @@ export const blogPosts = [
     date: "2024-03-15",
     author: "Megalight Team",
     image: "/lovable-uploads/27c54fb4-d57f-47bd-aa74-526a660110ae.png",
+    content: `
+      At MegaLight India, we believe in the power of natural cleaning solutions. Our products are carefully formulated to be both effective and environmentally responsible.
+
+      Key Benefits of Natural Cleaning:
+      • Safe for your family and pets
+      • Biodegradable ingredients
+      • No harsh chemicals
+      • Effective cleaning power
+      
+      Our commitment to sustainability extends beyond our products to our manufacturing processes and packaging choices. We continuously strive to minimize our environmental impact while maximizing cleaning effectiveness.
+    `
   },
   {
     id: 2,
-    title: "Professional Cleaning Tips for Your Home",
-    description: "Learn expert cleaning techniques and get the most out of your cleaning products.",
+    title: "Celebrating Our Growth Journey",
+    description: "From humble beginnings to becoming a trusted name in cleaning solutions - our journey of innovation and excellence.",
     date: "2024-03-10",
-    author: "Cleaning Experts",
+    author: "MegaLight Marketing",
     image: "/lovable-uploads/89aef022-140e-4bac-ba01-02bb566d04c1.png",
+    content: `
+      We're proud to share our journey of growth and innovation in the cleaning industry. Starting as a small enterprise, we've grown into a trusted manufacturer of premium cleaning solutions.
+
+      Our Milestones:
+      • Establishment of state-of-the-art manufacturing facility
+      • Development of innovative product formulations
+      • Growing network of satisfied distributors
+      • Expanding presence across India
+
+      We thank our customers and partners for being part of this incredible journey.
+    `
   },
   {
     id: 3,
     title: "Sustainable Cleaning Practices",
-    description: "Explore how to maintain a clean home while minimizing environmental impact.",
+    description: "Learn how to maintain a clean home while minimizing environmental impact with our eco-friendly products.",
     date: "2024-03-05",
     author: "Environmental Team",
     image: "/lovable-uploads/95e6e5bd-b034-4a80-9a71-dd0cc4a20887.png",
+    content: `
+      Sustainable cleaning is more than just using eco-friendly products - it's about adopting practices that protect our environment for future generations.
+
+      Best Practices for Sustainable Cleaning:
+      • Use concentrated products to reduce packaging waste
+      • Follow proper dilution ratios
+      • Choose reusable cleaning tools
+      • Opt for biodegradable solutions
+
+      Our products are designed to support these sustainable practices while delivering exceptional cleaning results.
+    `
   }
 ];
 
