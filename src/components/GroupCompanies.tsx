@@ -2,23 +2,23 @@ const GroupCompanies = () => {
   const companies = [
     {
       name: "Mega Light",
-      logo: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png"
+      logo: "/lovable-uploads/6f9633c9-831f-4b82-bdbd-21bc1e1452a6.png"
     },
     {
       name: "Ashirwad Logistics",
-      logo: "/lovable-uploads/cf965368-4d90-4acb-9d4f-53264d8ebecd.png"
+      logo: "/lovable-uploads/f6974c66-9ea2-4268-aad5-edbab9171b48.png"
     },
     {
       name: "Ashirwad Stores",
-      logo: "/lovable-uploads/c5f0b70a-4a5d-4efd-86e3-ad8342fd2994.png"
+      logo: "/lovable-uploads/d7143b6b-a62b-4f51-bc77-3bf2272b82c8.png"
     },
     {
       name: "Aman Agency",
-      logo: "/lovable-uploads/be4ba8ee-4ecb-4673-b35d-5602a3aa3640.png"
+      logo: "/lovable-uploads/89aef022-140e-4bac-ba01-02bb566d04c1.png"
     },
     {
-      name: "Nitya Central",
-      logo: "/lovable-uploads/b5eee124-e677-477e-bf6b-466b152bd2ab.png"
+      name: "Nirmala Chemicals",
+      logo: "/lovable-uploads/6ef7d9cb-8186-4651-b8f9-875eea0dd64e.png"
     }
   ];
 
