@@ -10,18 +10,44 @@ const productData = {
     variants: [
       {
         name: "Citrus Fresh",
+        description: "Surface Disinfectant and Mosquito Repellent",
         sizes: [
-          { size: "500 ML", image: "/lovable-uploads/b5eee124-e677-477e-bf6b-466b152bd2ab.png" },
-          { size: "1 LITER", image: "/lovable-uploads/b5eee124-e677-477e-bf6b-466b152bd2ab.png" },
-          { size: "5 LITER", image: "/lovable-uploads/b5eee124-e677-477e-bf6b-466b152bd2ab.png" }
+          { 
+            size: "500 ML", 
+            image: "/lovable-uploads/25755005-e955-4773-8290-321778a8e6b0.png",
+            description: "Perfect for small households"
+          },
+          { 
+            size: "1 LITER", 
+            image: "/lovable-uploads/39f533b4-ef01-43a8-a40c-206b6826bb81.png",
+            description: "Most popular size"
+          },
+          { 
+            size: "5 LITER", 
+            image: "/lovable-uploads/7ddfaff7-b031-45e5-9867-8f90bc4898a0.png",
+            description: "Economical pack for large spaces"
+          }
         ]
       },
       {
-        name: "Hygiene Fresh",
+        name: "Hygienic Fresh",
+        description: "White Perfumed Disinfecting Fluid",
         sizes: [
-          { size: "500 ML", image: "/lovable-uploads/b5eee124-e677-477e-bf6b-466b152bd2ab.png" },
-          { size: "1 LITER", image: "/lovable-uploads/b5eee124-e677-477e-bf6b-466b152bd2ab.png" },
-          { size: "5 LITER", image: "/lovable-uploads/b5eee124-e677-477e-bf6b-466b152bd2ab.png" }
+          { 
+            size: "500 ML", 
+            image: "/lovable-uploads/7891dc5b-50a7-4ce5-aecc-a7aaa7178016.png",
+            description: "Perfect for small households"
+          },
+          { 
+            size: "1 LITER", 
+            image: "/lovable-uploads/8ab15045-baeb-447c-9f6b-776ec3f7f714.png",
+            description: "Most popular size"
+          },
+          { 
+            size: "5 LITER", 
+            image: "/lovable-uploads/62618d5b-7d7a-4185-9c15-348023994b17.png",
+            description: "Economical pack for large spaces"
+          }
         ]
       }
     ],
@@ -41,10 +67,23 @@ const productData = {
     variants: [
       {
         name: "Regular",
+        description: "Hi-Glo Formula for Sparkling White",
         sizes: [
-          { size: "100 ml", image: "/lovable-uploads/f2c31937-21d6-419f-9ba7-fa55880ceeb1.png" },
-          { size: "500 ml", image: "/lovable-uploads/f2c31937-21d6-419f-9ba7-fa55880ceeb1.png" },
-          { size: "1 liter", image: "/lovable-uploads/f2c31937-21d6-419f-9ba7-fa55880ceeb1.png" }
+          { 
+            size: "100 ml", 
+            image: "/lovable-uploads/3b4e087c-0b89-40c3-bccf-b7cf8fa7accd.png",
+            description: "Travel-friendly size"
+          },
+          { 
+            size: "500 ml + 20% Extra", 
+            image: "/lovable-uploads/4236d8bc-da2b-40e6-acbf-9a77cd746caf.png",
+            description: "Family pack with extra value"
+          },
+          { 
+            size: "1 liter + 10% Extra", 
+            image: "/lovable-uploads/682fe596-52c4-4713-af5a-d1028510eb8a.png",
+            description: "Bulk pack for regular use"
+          }
         ]
       }
     ],
@@ -64,9 +103,18 @@ const productData = {
     variants: [
       {
         name: "Power Wash",
+        description: "2X More Power for Deep Cleaning",
         sizes: [
-          { size: "2 kg", image: "/lovable-uploads/c5f0b70a-4a5d-4efd-86e3-ad8342fd2994.png" },
-          { size: "3 kg", image: "/lovable-uploads/c5f0b70a-4a5d-4efd-86e3-ad8342fd2994.png" }
+          { 
+            size: "500g", 
+            image: "/lovable-uploads/4612cec1-0fb5-4726-bf74-261c5b477462.png",
+            description: "Trial pack"
+          },
+          { 
+            size: "1kg", 
+            image: "/lovable-uploads/a1ba60a6-2af8-4350-853c-5d5be200856b.png",
+            description: "Regular family pack"
+          }
         ]
       }
     ],
@@ -86,8 +134,13 @@ const productData = {
     variants: [
       {
         name: "Regular",
+        description: "Pure and Strong Disinfectant",
         sizes: [
-          { size: "400 gram", image: "/lovable-uploads/95e6e5bd-b034-4a80-9a71-dd0cc4a20887.png" }
+          { 
+            size: "400g", 
+            image: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png",
+            description: "Multi-purpose cleaning powder"
+          }
         ]
       }
     ],
@@ -136,19 +189,28 @@ const ProductDetail = () => {
             </div>
           </div>
           
-          <div className="space-y-8">
+          <div className="space-y-12">
             {product.variants.map((variant, index) => (
               <div key={index} className="bg-highlight rounded-xl p-6">
-                <h3 className="text-xl font-semibold mb-4">{variant.name}</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-semibold mb-2">{variant.name}</h3>
+                  <p className="text-accent/80">{variant.description}</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {variant.sizes.map((size, sizeIndex) => (
-                    <div key={sizeIndex} className="bg-white rounded-lg p-4 text-center">
-                      <img 
-                        src={size.image} 
-                        alt={`${product.name} ${variant.name} ${size.size}`}
-                        className="w-full h-auto object-contain mb-3"
-                      />
-                      <p className="font-medium">{size.size}</p>
+                    <div 
+                      key={sizeIndex} 
+                      className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow"
+                    >
+                      <div className="aspect-square mb-4 relative overflow-hidden rounded-lg">
+                        <img 
+                          src={size.image} 
+                          alt={`${product.name} ${variant.name} ${size.size}`}
+                          className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <h4 className="font-semibold text-lg mb-1">{size.size}</h4>
+                      <p className="text-sm text-accent/70">{size.description}</p>
                     </div>
                   ))}
                 </div>
