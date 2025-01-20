@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ProductBanner from '../components/ProductBanner';
 
 const productData = {
   "floor-cleaner": {
@@ -171,10 +172,14 @@ const ProductDetail = () => {
           Back to Products
         </Link>
         
+        <ProductBanner productId={productId as string} />
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <h1 className="text-4xl font-bold">{product.name}</h1>
-            <p className="text-lg text-accent/80">{product.longDescription}</p>
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Product Description</h2>
+              <p className="text-lg text-accent/80">{product.longDescription}</p>
+            </div>
             
             <div>
               <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
@@ -191,28 +196,30 @@ const ProductDetail = () => {
           
           <div className="space-y-12">
             {product.variants.map((variant, index) => (
-              <div key={index} className="bg-highlight rounded-xl p-6">
-                <div className="mb-6">
+              <div key={index} className="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div className="bg-primary/5 p-6">
                   <h3 className="text-2xl font-semibold mb-2">{variant.name}</h3>
                   <p className="text-accent/80">{variant.description}</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {variant.sizes.map((size, sizeIndex) => (
-                    <div 
-                      key={sizeIndex} 
-                      className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow"
-                    >
-                      <div className="aspect-square mb-4 relative overflow-hidden rounded-lg">
-                        <img 
-                          src={size.image} 
-                          alt={`${product.name} ${variant.name} ${size.size}`}
-                          className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
-                        />
+                <div className="p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {variant.sizes.map((size, sizeIndex) => (
+                      <div 
+                        key={sizeIndex} 
+                        className="group bg-highlight rounded-lg p-4 text-center transition-all duration-300 hover:shadow-md"
+                      >
+                        <div className="aspect-square mb-4 relative overflow-hidden rounded-lg bg-white">
+                          <img 
+                            src={size.image} 
+                            alt={`${product.name} ${variant.name} ${size.size}`}
+                            className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <h4 className="font-semibold text-lg mb-1">{size.size}</h4>
+                        <p className="text-sm text-accent/70">{size.description}</p>
                       </div>
-                      <h4 className="font-semibold text-lg mb-1">{size.size}</h4>
-                      <p className="text-sm text-accent/70">{size.description}</p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
