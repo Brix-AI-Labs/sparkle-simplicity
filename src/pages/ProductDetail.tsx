@@ -91,6 +91,19 @@ const productData = {
     name: "Liquid Blue",
     description: "Advanced whitening solution for brighter and cleaner clothes. Safe on all fabrics and removes tough stains.",
     longDescription: "Our advanced Liquid Blue formula is designed to enhance the whiteness of your clothes while being gentle on fabrics. It effectively removes tough stains and brightens your whites, making them look new for longer.",
+    specifications: {
+      composition: "Optical brighteners, Stabilizers, Color-safe formula",
+      pH: "6.5 - 7.5 (Neutral)",
+      appearance: "Blue liquid",
+      fragrance: "Fresh laundry scent"
+    },
+    applications: [
+      "White cotton fabrics",
+      "Mixed colored clothes",
+      "Machine wash",
+      "Hand wash",
+      "All types of fabrics"
+    ],
     variants: [
       {
         name: "Regular",
@@ -127,6 +140,19 @@ const productData = {
     name: "Detergent Powder",
     description: "High-performance washing powder with superior cleaning power. Perfect for both machine and hand wash.",
     longDescription: "Our premium detergent powder is formulated with advanced cleaning technology that removes even the toughest stains while being gentle on your clothes. Suitable for both machine and hand wash, it leaves your clothes fresh and clean.",
+    specifications: {
+      composition: "Active enzymes, Surfactants, Optical brighteners",
+      pH: "8.0 - 9.0 (Alkaline)",
+      appearance: "Blue granules with white particles",
+      fragrance: "Fresh floral scent"
+    },
+    applications: [
+      "Daily laundry",
+      "Heavy-duty washing",
+      "Machine wash",
+      "Hand wash",
+      "All fabric types"
+    ],
     variants: [
       {
         name: "Power Wash",
@@ -158,6 +184,19 @@ const productData = {
     name: "Bleaching Powder",
     description: "Powerful bleaching powder for effective disinfection and cleaning. Ideal for commercial and household use.",
     longDescription: "Our professional-grade bleaching powder provides powerful disinfection and cleaning for both commercial and household applications. It effectively sanitizes surfaces while removing tough stains and dirt.",
+    specifications: {
+      composition: "Calcium hypochlorite, Stabilizers",
+      pH: "11.0 - 12.0 (Strong alkaline)",
+      appearance: "White powder",
+      fragrance: "Characteristic chlorine odor"
+    },
+    applications: [
+      "Surface disinfection",
+      "Water treatment",
+      "Industrial cleaning",
+      "Bathroom sanitization",
+      "Commercial spaces"
+    ],
     variants: [
       {
         name: "Regular",
