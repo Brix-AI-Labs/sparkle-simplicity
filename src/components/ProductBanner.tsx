@@ -20,22 +20,24 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
   };
 
   return (
-    <div className="relative w-full h-[300px] bg-highlight rounded-xl overflow-hidden mb-12">
+    <div className="relative w-full h-[400px] bg-highlight rounded-xl overflow-hidden mb-12">
       <img 
         src={bannerImages[productId as keyof typeof bannerImages]} 
         alt={`${productId} banner`}
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center">
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
         <div className="text-white p-8 max-w-2xl">
-          <h1 className="text-4xl font-bold mb-4 uppercase">
-            Mega Light
-            <br />
-            {productId.split('-').join(' ')}
-          </h1>
-          <p className="text-lg">
-            {slogans[productId as keyof typeof slogans]}
-          </p>
+          <div className="space-y-4 animate-fade-up">
+            <h1 className="text-5xl font-bold uppercase tracking-tight">
+              Mega Light
+              <br />
+              {productId.split('-').join(' ')}
+            </h1>
+            <p className="text-xl font-light leading-relaxed">
+              {slogans[productId as keyof typeof slogans]}
+            </p>
+          </div>
         </div>
       </div>
     </div>
