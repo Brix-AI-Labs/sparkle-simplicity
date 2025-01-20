@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-highlight to-background">
-      <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-highlight/5 opacity-50" />
       
       <div className="container mx-auto px-4 pt-20 relative z-10">
         <div className="max-w-3xl mx-auto text-center animate-fade-up">
