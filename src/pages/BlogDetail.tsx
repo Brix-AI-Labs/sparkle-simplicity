@@ -39,7 +39,7 @@ const BlogDetail = () => {
       <Navbar />
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-6">
+          <Link to="/" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-6">
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
           </Link>
