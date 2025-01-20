@@ -3,19 +3,28 @@ import { ArrowRight } from 'lucide-react';
 const Products = () => {
   const products = [
     {
+      name: "Floor Cleaner",
+      description: "Premium floor cleaner that leaves your floors sparkling clean with a long-lasting fragrance. Effective on all types of floors.",
+      image: "/placeholder.svg",
+      features: ["All-purpose cleaner", "Long-lasting fragrance", "Kills 99.9% germs"]
+    },
+    {
       name: "Liquid Blue",
-      description: "Advanced formula for brighter whites",
-      image: "/placeholder.svg"
+      description: "Advanced whitening solution for brighter and cleaner clothes. Safe on all fabrics and removes tough stains.",
+      image: "/placeholder.svg",
+      features: ["Brightens whites", "Removes tough stains", "Fabric safe"]
     },
     {
       name: "Detergent Powder",
-      description: "Superior cleaning power for all fabrics",
-      image: "/placeholder.svg"
+      description: "High-performance washing powder with superior cleaning power. Perfect for both machine and hand wash.",
+      image: "/placeholder.svg",
+      features: ["Superior cleaning", "Fresh fragrance", "Machine & hand wash"]
     },
     {
-      name: "Floor Cleaner",
-      description: "Deep cleaning for sparkling floors",
-      image: "/placeholder.svg"
+      name: "Bleaching Powder",
+      description: "Powerful bleaching powder for effective disinfection and cleaning. Ideal for commercial and household use.",
+      image: "/placeholder.svg",
+      features: ["Strong disinfectant", "Multi-purpose", "Commercial grade"]
     }
   ];
 
@@ -29,7 +38,7 @@ const Products = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
             <div 
               key={index}
@@ -43,10 +52,18 @@ const Products = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-              <p className="text-accent/80 mb-4">{product.description}</p>
+              <p className="text-accent/80 mb-4 text-sm">{product.description}</p>
+              <ul className="space-y-2 mb-4">
+                {product.features.map((feature, idx) => (
+                  <li key={idx} className="text-sm text-accent/70 flex items-center">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
               <a 
                 href="#" 
-                className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+                className="inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm font-medium"
               >
                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
               </a>
