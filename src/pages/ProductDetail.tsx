@@ -1,32 +1,58 @@
 import { useParams } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Check, Package, Info, Scale, List } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProductBanner from '../components/ProductBanner';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const productData = {
   "floor-cleaner": {
     name: "Floor Cleaner",
     description: "Premium floor cleaner that leaves your floors sparkling clean with a long-lasting fragrance. Effective on all types of floors.",
     longDescription: "Our premium floor cleaner is specially formulated to provide deep cleaning while being gentle on all types of floors. The unique formula ensures a streak-free finish and long-lasting fragrance that keeps your space fresh for hours.",
+    specifications: {
+      composition: "Active surfactants, Essential oils, Fragrance",
+      pH: "7.0 - 8.0 (Neutral)",
+      appearance: "Clear liquid",
+      fragrance: "Long-lasting fresh scent"
+    },
+    applications: [
+      "Marble floors",
+      "Ceramic tiles",
+      "Wooden surfaces",
+      "Vinyl flooring",
+      "Concrete surfaces"
+    ],
     variants: [
       {
         name: "Citrus Fresh",
         description: "Surface Disinfectant and Mosquito Repellent",
+        benefits: [
+          "Natural citrus extracts",
+          "Mosquito repellent properties",
+          "Anti-bacterial action",
+          "Safe for pets and children"
+        ],
         sizes: [
           { 
             size: "500 ML", 
             image: "/lovable-uploads/25755005-e955-4773-8290-321778a8e6b0.png",
-            description: "Perfect for small households"
+            description: "Perfect for small households",
+            coverage: "Up to 500 sq. ft.",
+            dilutionRatio: "1:20"
           },
           { 
             size: "1 LITER", 
             image: "/lovable-uploads/39f533b4-ef01-43a8-a40c-206b6826bb81.png",
-            description: "Most popular size"
+            description: "Most popular size",
+            coverage: "Up to 1000 sq. ft.",
+            dilutionRatio: "1:20"
           },
           { 
             size: "5 LITER", 
             image: "/lovable-uploads/7ddfaff7-b031-45e5-9867-8f90bc4898a0.png",
-            description: "Economical pack for large spaces"
+            description: "Economical pack for large spaces",
+            coverage: "Up to 5000 sq. ft.",
+            dilutionRatio: "1:20"
           }
         ]
       },
@@ -176,52 +202,107 @@ const ProductDetail = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Product Description</h2>
-              <p className="text-lg text-accent/80">{product.longDescription}</p>
-            </div>
-            
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
-              <ul className="space-y-3">
-                {product.features.map((feature, index) => (
-                  <li key={index} className="flex items-center text-accent/80">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Info className="h-5 w-5 text-primary" />
+                  Product Specifications
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <dl className="space-y-4">
+                  {Object.entries(product.specifications).map(([key, value]) => (
+                    <div key={key}>
+                      <dt className="font-medium text-accent">{key.charAt(0).toUpperCase() + key.slice(1)}</dt>
+                      <dd className="text-accent/80 mt-1">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <List className="h-5 w-5 text-primary" />
+                  Applications
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {product.applications.map((application, index) => (
+                    <li key={index} className="flex items-center text-accent/80">
+                      <Check className="h-4 w-4 text-primary mr-2" />
+                      {application}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </div>
           
           <div className="space-y-12">
             {product.variants.map((variant, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-sm overflow-hidden">
-                <div className="bg-primary/5 p-6">
-                  <h3 className="text-2xl font-semibold mb-2">{variant.name}</h3>
-                  <p className="text-accent/80">{variant.description}</p>
-                </div>
-                <div className="p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {variant.sizes.map((size, sizeIndex) => (
-                      <div 
-                        key={sizeIndex} 
-                        className="group bg-highlight rounded-lg p-4 text-center transition-all duration-300 hover:shadow-md"
-                      >
-                        <div className="aspect-square mb-4 relative overflow-hidden rounded-lg bg-white">
-                          <img 
-                            src={size.image} 
-                            alt={`${product.name} ${variant.name} ${size.size}`}
-                            className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <h4 className="font-semibold text-lg mb-1">{size.size}</h4>
-                        <p className="text-sm text-accent/70">{size.description}</p>
+              <Card key={index} className="overflow-hidden">
+                <CardHeader className="bg-primary/5">
+                  <CardTitle className="flex items-center gap-2">
+                    <Package className="h-5 w-5 text-primary" />
+                    {variant.name}
+                  </CardTitle>
+                  <p className="text-accent/80 mt-2">{variant.description}</p>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <div className="space-y-6">
+                    {variant.benefits && (
+                      <div className="space-y-2">
+                        <h4 className="font-medium">Key Benefits</h4>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                          {variant.benefits.map((benefit, idx) => (
+                            <li key={idx} className="flex items-center text-accent/80">
+                              <Check className="h-4 w-4 text-primary mr-2" />
+                              {benefit}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    ))}
+                    )}
+                    
+                    <div>
+                      <h4 className="font-medium mb-4">Available Sizes</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {variant.sizes.map((size, sizeIndex) => (
+                          <div 
+                            key={sizeIndex} 
+                            className="group bg-highlight rounded-lg p-4 text-center transition-all duration-300 hover:shadow-md"
+                          >
+                            <div className="aspect-square mb-4 relative overflow-hidden rounded-lg bg-white">
+                              <img 
+                                src={size.image} 
+                                alt={`${product.name} ${variant.name} ${size.size}`}
+                                className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
+                                loading="lazy"
+                              />
+                            </div>
+                            <h4 className="font-semibold text-lg mb-1">{size.size}</h4>
+                            <p className="text-sm text-accent/70 mb-2">{size.description}</p>
+                            {size.coverage && (
+                              <div className="flex items-center justify-center text-xs text-accent/60 gap-1">
+                                <Scale className="h-3 w-3" />
+                                Coverage: {size.coverage}
+                              </div>
+                            )}
+                            {size.dilutionRatio && (
+                              <div className="text-xs text-accent/60 mt-1">
+                                Dilution Ratio: {size.dilutionRatio}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
