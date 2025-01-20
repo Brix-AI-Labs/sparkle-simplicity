@@ -1,7 +1,14 @@
 import { ArrowRight, Droplet, Leaf, PawPrint, SprayCanIcon, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Products = () => {
+  const navigate = useNavigate();
+
+  const handleProductClick = (productId: string) => {
+    navigate(`/product/${productId}`);
+    window.scrollTo(0, 0);
+  };
+
   const products = [
     {
       id: "floor-cleaner",
@@ -122,10 +129,10 @@ const Products = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
-            <Link 
-              to={`/product/${product.id}`}
+            <div 
               key={index}
-              className="block group relative overflow-hidden rounded-xl bg-highlight p-6 transition-all duration-300 hover:shadow-lg"
+              onClick={() => handleProductClick(product.id)}
+              className="block cursor-pointer group relative overflow-hidden rounded-xl bg-highlight p-6 transition-all duration-300 hover:shadow-lg"
             >
               <div className="aspect-square mb-6 overflow-hidden rounded-lg bg-white">
                 <img 
@@ -163,7 +170,7 @@ const Products = () => {
               <div className="inline-flex items-center text-primary group-hover:text-primary/80 transition-colors text-sm font-medium">
                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
