@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Droplet, Leaf, PawPrint, SprayCanIcon, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Products = () => {
@@ -6,30 +6,107 @@ const Products = () => {
     {
       id: "floor-cleaner",
       name: "Floor Cleaner",
-      description: "Premium floor cleaner that leaves your floors sparkling clean with a long-lasting fragrance. Effective on all types of floors.",
+      description: "Premium floor cleaner that leaves your floors sparkling clean with a long-lasting fragrance. Available in Citrus Fresh and Hygienic Fresh variants.",
       image: "/lovable-uploads/27c54fb4-d57f-47bd-aa74-526a660110ae.png",
-      features: ["All-purpose cleaner", "Long-lasting fragrance", "Kills 99.9% germs"]
+      features: [
+        { icon: Droplet, text: "Deep cleaning action" },
+        { icon: Leaf, text: "Eco-friendly ingredients" },
+        { icon: PawPrint, text: "Pet & child friendly" },
+        { icon: Check, text: "Anti-slip formula" }
+      ],
+      variants: [
+        {
+          name: "Citrus Fresh",
+          description: "Natural citrus aroma with powerful cleaning action",
+          sizes: ["500ml", "1L", "5L"]
+        },
+        {
+          name: "Hygienic Fresh",
+          description: "Kills 99.9% of germs with long-lasting freshness",
+          sizes: ["500ml", "1L", "5L"]
+        }
+      ],
+      keyBenefits: [
+        "Effective on all floor types",
+        "Long-lasting fragrance",
+        "No harmful residue",
+        "Concentrated formula"
+      ]
     },
     {
       id: "liquid-blue",
       name: "Liquid Blue",
-      description: "Advanced whitening solution for brighter and cleaner clothes. Safe on all fabrics and removes tough stains.",
+      description: "Advanced whitening solution that enhances fabric brightness and restores natural whiteness while being gentle on clothes.",
       image: "/lovable-uploads/9f3e17cc-b117-4015-8ef0-4325c497b4aa.png",
-      features: ["Brightens whites", "Removes tough stains", "Fabric safe"]
+      features: [
+        { icon: Droplet, text: "Enhanced brightness" },
+        { icon: Leaf, text: "Gentle on fabrics" },
+        { icon: Check, text: "Universal compatibility" },
+        { icon: SprayCanIcon, text: "Easy mix formula" }
+      ],
+      variants: [
+        {
+          name: "Regular",
+          description: "Perfect for both machine and hand wash",
+          sizes: ["100ml", "200ml", "500ml"]
+        }
+      ],
+      keyBenefits: [
+        "Restores fabric whiteness",
+        "Boosts color vibrancy",
+        "Economical usage",
+        "Works with all detergents"
+      ]
     },
     {
       id: "detergent-powder",
       name: "Detergent Powder",
-      description: "High-performance washing powder with superior cleaning power. Perfect for both machine and hand wash.",
+      description: "High-performance washing powder with advanced stain removal technology and fabric care protection.",
       image: "/lovable-uploads/be4ba8ee-4ecb-4673-b35d-5602a3aa3640.png",
-      features: ["Superior cleaning", "Fresh fragrance", "Machine & hand wash"]
+      features: [
+        { icon: Droplet, text: "Superior cleaning" },
+        { icon: Leaf, text: "Eco-friendly formula" },
+        { icon: Check, text: "Low foam technology" },
+        { icon: SprayCanIcon, text: "Color protection" }
+      ],
+      variants: [
+        {
+          name: "Power Wash",
+          description: "Advanced stain removal with fabric protection",
+          sizes: ["500g", "1kg", "5kg"]
+        }
+      ],
+      keyBenefits: [
+        "Removes tough stains",
+        "Protects fabric colors",
+        "Works in hot & cold water",
+        "Phosphate-free formula"
+      ]
     },
     {
       id: "bleaching-powder",
       name: "Bleaching Powder",
-      description: "Powerful bleaching powder for effective disinfection and cleaning. Ideal for commercial and household use.",
+      description: "Professional-grade bleaching powder for powerful disinfection and whitening, ideal for multiple applications.",
       image: "/lovable-uploads/cf965368-4d90-4acb-9d4f-53264d8ebecd.png",
-      features: ["Strong disinfectant", "Multi-purpose", "Commercial grade"]
+      features: [
+        { icon: Droplet, text: "Powerful disinfectant" },
+        { icon: Check, text: "Multi-purpose use" },
+        { icon: SprayCanIcon, text: "Fast dissolving" },
+        { icon: Leaf, text: "Eco-conscious" }
+      ],
+      variants: [
+        {
+          name: "Regular",
+          description: "Professional strength disinfectant & whitener",
+          sizes: ["500g", "1kg", "10kg"]
+        }
+      ],
+      keyBenefits: [
+        "Kills 99.9% germs",
+        "Removes tough stains",
+        "Multiple applications",
+        "Industrial strength"
+      ]
     }
   ];
 
@@ -58,14 +135,30 @@ const Products = () => {
               </div>
               <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
               <p className="text-accent/80 mb-4 text-sm">{product.description}</p>
-              <ul className="space-y-2 mb-4">
-                {product.features.map((feature, idx) => (
-                  <li key={idx} className="text-sm text-accent/70 flex items-center">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              
+              <div className="space-y-4 mb-4">
+                <div className="grid grid-cols-2 gap-3">
+                  {product.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center text-sm text-accent/70">
+                      <feature.icon className="w-4 h-4 mr-2 text-primary" />
+                      <span>{feature.text}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="space-y-2">
+                  <h4 className="font-medium text-sm">Available Variants:</h4>
+                  {product.variants.map((variant, idx) => (
+                    <div key={idx} className="text-sm">
+                      <span className="font-medium text-primary">{variant.name}</span>
+                      <div className="text-accent/60 text-xs mt-1">
+                        Sizes: {variant.sizes.join(", ")}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
               <Link 
                 to={`/product/${product.id}`}
                 className="inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm font-medium"
