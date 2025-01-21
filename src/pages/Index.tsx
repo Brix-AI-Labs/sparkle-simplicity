@@ -11,16 +11,26 @@ import Blog from '../components/Blog';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navbar />
-      <Hero />
-      <Features />
-      <Products />
+      <div className="bg-gradient-hero">
+        <Hero />
+      </div>
+      <div className="bg-gradient-warm">
+        <Features />
+      </div>
+      <div className="bg-gradient-cool">
+        <Products />
+      </div>
       <WhyChooseUs />
       <About />
-      <GroupCompanies />
+      <div className="bg-gradient-warm">
+        <GroupCompanies />
+      </div>
       <Blog />
-      <Testimonials />
+      <div className="bg-gradient-cool">
+        <Testimonials />
+      </div>
       <Contact />
     </div>
   );
