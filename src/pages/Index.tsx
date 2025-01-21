@@ -8,6 +8,7 @@ import Contact from '../components/Contact';
 import WhyChooseUs from '../components/WhyChooseUs';
 import GroupCompanies from '../components/GroupCompanies';
 import Blog from '../components/Blog';
+import GlobalPresence from '../components/GlobalPresence';
 
 const Index = () => {
   return (
@@ -16,22 +17,33 @@ const Index = () => {
       <div className="bg-gradient-hero">
         <Hero />
       </div>
-      <div className="bg-gradient-warm">
+      <div className="bg-gradient-to-b from-secondary/20 to-white">
         <Features />
       </div>
-      <div className="bg-gradient-cool">
+      <div className="bg-gradient-to-b from-white to-primary/5">
         <Products />
       </div>
-      <WhyChooseUs />
-      <About />
-      <div className="bg-gradient-warm">
+      <div className="bg-gradient-to-b from-primary/5 to-white">
+        <WhyChooseUs />
+      </div>
+      <div className="bg-gradient-to-b from-white to-secondary/20">
+        <About />
+      </div>
+      <div className="bg-gradient-to-b from-secondary/20 to-white">
+        <GlobalPresence />
+      </div>
+      <div className="bg-gradient-to-b from-white to-primary/5">
         <GroupCompanies />
       </div>
-      <Blog />
-      <div className="bg-gradient-cool">
+      <div className="bg-gradient-to-b from-primary/5 to-white">
+        <Blog />
+      </div>
+      <div className="bg-gradient-to-b from-white to-secondary/20">
         <Testimonials />
       </div>
-      <Contact />
+      <div className="bg-gradient-warm">
+        <Contact />
+      </div>
     </div>
   );
 };
