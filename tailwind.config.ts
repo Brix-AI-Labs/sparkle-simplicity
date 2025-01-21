@@ -79,6 +79,45 @@ export default {
             transform: "translateY(-5px)",
           },
         },
+        "marker-to-nepal": {
+          "0%": {
+            transform: "translate(0, 0)",
+            opacity: "0",
+          },
+          "20%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translate(-20px, -20px)",
+            opacity: "1",
+          },
+        },
+        "marker-to-bhutan": {
+          "0%": {
+            transform: "translate(0, 0)",
+            opacity: "0",
+          },
+          "20%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translate(20px, -15px)",
+            opacity: "1",
+          },
+        },
+        "marker-to-bangladesh": {
+          "0%": {
+            transform: "translate(0, 0)",
+            opacity: "0",
+          },
+          "20%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translate(30px, 10px)",
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out",
@@ -86,6 +125,9 @@ export default {
         "scale-up": "scale-up 0.3s ease-out",
         "slide-in": "slide-in 0.3s ease-out",
         "float": "float 3s ease-in-out infinite",
+        "to-nepal": "marker-to-nepal 3s ease-out forwards",
+        "to-bhutan": "marker-to-bhutan 3s ease-out forwards 1s",
+        "to-bangladesh": "marker-to-bangladesh 3s ease-out forwards 2s",
       },
     },
   },
