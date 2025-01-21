@@ -9,9 +9,9 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto text-center animate-fade-up">
           <div className="mb-8 flex justify-center">
             <img 
-              src="/lovable-uploads/f377f0b9-0f29-4734-81fb-a4d7f0a922c5.png" 
+              src="/lovable-uploads/6ef0d263-c999-488f-90ad-4d7e302a78a3.png" 
               alt="Megalight Logo" 
-              className="h-24 md:h-32 animate-float"
+              className="h-32 md:h-40 animate-float filter drop-shadow-xl"
             />
           </div>
           
