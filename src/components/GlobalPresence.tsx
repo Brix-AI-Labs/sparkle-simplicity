@@ -15,7 +15,6 @@ const GlobalPresence = () => {
 
         <div className="relative">
           <div className="relative w-full h-[400px] md:h-[600px] mb-8 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-cool opacity-50"></div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
