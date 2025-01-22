@@ -3,20 +3,14 @@ import { Star } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Rajesh Kumar",
-      role: "Business Owner",
-      content: "MegaLight products have transformed our cleaning operations. The quality is unmatched and customer service is exceptional.",
-      rating: 5
-    },
-    {
-      name: "Priya Sharma",
-      role: "Distributor",
-      content: "Being a MegaLight distributor has been rewarding. Their products are in high demand and the support is outstanding.",
+      name: "Priya Sharma Sherpa",
+      role: "Distributor, Sikkim",
+      content: "MegaLight products have transformed our cleaning operations in Sikkim. The quality and performance are exceptional.",
       rating: 5
     },
     {
       name: "Amit Patel",
-      role: "Hotel Manager",
+      role: "Hotel Manager, Silvasa",
       content: "We've been using MegaLight products for years. They consistently deliver excellent results and are cost-effective.",
       rating: 5
     }
@@ -28,15 +22,15 @@ const Testimonials = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
           <p className="text-accent/80 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from our satisfied customers
+            Join our network of 150+ happy distributors and satisfied customers
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-white p-6 rounded-xl shadow-lg"
+              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (

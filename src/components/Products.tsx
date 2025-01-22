@@ -68,26 +68,26 @@ const Products = () => {
     {
       id: "detergent-powder",
       name: "Detergent Powder",
-      description: "High-performance washing powder with advanced stain removal technology and fabric care protection.",
+      description: "High-performance washing powder with color granules, white particles, and high foam technology for superior cleaning results.",
       image: "/lovable-uploads/be4ba8ee-4ecb-4673-b35d-5602a3aa3640.png",
       features: [
-        { icon: Droplet, text: "Superior cleaning" },
-        { icon: Leaf, text: "Eco-friendly formula" },
-        { icon: Check, text: "Low foam technology" },
-        { icon: SprayCanIcon, text: "Color protection" }
+        { icon: Droplet, text: "High foam technology" },
+        { icon: Leaf, text: "Color granules" },
+        { icon: Check, text: "White particles" },
+        { icon: SprayCanIcon, text: "22 years expertise" }
       ],
       variants: [
         {
           name: "Power Wash",
           description: "Advanced stain removal with fabric protection",
-          sizes: ["500g", "1kg", "5kg"]
+          sizes: ["400g"]
         }
       ],
       keyBenefits: [
-        "Removes tough stains",
-        "Protects fabric colors",
-        "Works in hot & cold water",
-        "Phosphate-free formula"
+        "Superior cleaning power",
+        "High foam technology",
+        "Color protection",
+        "Fabric care formula"
       ]
     },
     {

@@ -13,10 +13,6 @@ const GroupCompanies = () => {
       logo: "/lovable-uploads/d7143b6b-a62b-4f51-bc77-3bf2272b82c8.png"
     },
     {
-      name: "Aman Agency",
-      logo: "/lovable-uploads/89aef022-140e-4bac-ba01-02bb566d04c1.png"
-    },
-    {
       name: "Nirmala Chemicals",
       logo: "/lovable-uploads/6ef7d9cb-8186-4651-b8f9-875eea0dd64e.png"
     }
@@ -39,6 +35,7 @@ const GroupCompanies = () => {
                 src={company.logo} 
                 alt={`${company.name} logo`}
                 className="max-w-full max-h-full object-contain"
+                loading="lazy"
               />
             </div>
           ))}
