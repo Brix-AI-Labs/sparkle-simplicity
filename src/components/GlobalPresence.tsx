@@ -16,26 +16,6 @@ const GlobalPresence = () => {
         <div className="relative">
           <div className="relative w-full h-[400px] md:h-[600px] mb-8 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
             <div className="absolute inset-0 bg-gradient-cool opacity-50"></div>
-            
-            {/* Base Marker (India) */}
-            <div className="absolute top-[50%] left-[70%] transform -translate-x-1/2 -translate-y-1/2">
-              <MapPin className="h-8 w-8 text-[#FF9933] animate-bounce shadow-lg" />
-            </div>
-
-            {/* Animated Arrows and Markers */}
-            <div className="absolute top-[50%] left-[70%] transform -translate-x-1/2 -translate-y-1/2">
-              {/* Nepal Arrow */}
-              <div className="absolute h-0.5 w-16 bg-gradient-to-r from-[#FF9933] to-[#128807] -rotate-45 origin-left animate-to-nepal" />
-              <div className="absolute h-3 w-3 bg-[#128807] rounded-full transform translate-x-[60px] -translate-y-[60px] animate-to-nepal" />
-              
-              {/* Bhutan Arrow */}
-              <div className="absolute h-0.5 w-16 bg-gradient-to-r from-[#FF9933] to-[#0099CC] rotate-0 origin-left animate-to-bhutan" />
-              <div className="absolute h-3 w-3 bg-[#0099CC] rounded-full transform translate-x-[60px] -translate-y-[20px] animate-to-bhutan" />
-              
-              {/* Bangladesh Arrow */}
-              <div className="absolute h-0.5 w-16 bg-gradient-to-r from-[#FF9933] to-[#006A4E] rotate-45 origin-left animate-to-bangladesh" />
-              <div className="absolute h-3 w-3 bg-[#006A4E] rounded-full transform translate-x-[60px] translate-y-[20px] animate-to-bangladesh" />
-            </div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
