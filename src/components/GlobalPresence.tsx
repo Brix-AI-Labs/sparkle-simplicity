@@ -16,15 +16,6 @@ const GlobalPresence = () => {
         <div className="relative">
           <div className="relative w-full h-[400px] md:h-[600px] mb-8 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
             <div className="absolute inset-0 bg-gradient-cool opacity-50"></div>
-            {/* Updated world map image with proper styling */}
-            <img 
-              src="/lovable-uploads/cf965368-4d90-4acb-9d4f-53264d8ebecd.png"
-              alt="World Map Showing Global Presence"
-              className="w-full h-full object-cover opacity-90"
-              style={{ mixBlendMode: 'multiply' }}
-              loading="lazy"
-              decoding="async"
-            />
             
             {/* Base Marker (India) */}
             <div className="absolute top-[50%] left-[70%] transform -translate-x-1/2 -translate-y-1/2">
