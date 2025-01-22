@@ -17,37 +17,30 @@ const GlobalPresence = () => {
           <div className="relative w-full h-[400px] md:h-[600px] mb-8">
             <img 
               src="/lovable-uploads/a478cc2f-dda0-491d-b166-2bf9e79e8cb3.png" 
-              alt="Global Presence Map" 
+              alt="World Map"
               className="w-full h-full object-contain"
               loading="lazy"
               decoding="async"
             />
             
             {/* Base Marker (India) */}
-            <div className="absolute top-[44%] left-[70%]">
+            <div className="absolute top-[50%] left-[70%] transform -translate-x-1/2 -translate-y-1/2">
               <MapPin className="h-8 w-8 text-[#FF9933] drop-shadow-lg" />
             </div>
 
-            {/* Animated Markers */}
-            <div className="absolute top-[44%] left-[70%] animate-to-nepal">
-              <div className="relative">
-                <div className="absolute h-0.5 w-8 bg-[#128807] -rotate-45 origin-left" />
-                <MapPin className="h-6 w-6 text-[#128807]" />
-              </div>
-            </div>
-
-            <div className="absolute top-[44%] left-[70%] animate-to-bhutan">
-              <div className="relative">
-                <div className="absolute h-0.5 w-8 bg-[#0099CC] rotate-45 origin-left" />
-                <MapPin className="h-6 w-6 text-[#0099CC]" />
-              </div>
-            </div>
-
-            <div className="absolute top-[44%] left-[70%] animate-to-bangladesh">
-              <div className="relative">
-                <div className="absolute h-0.5 w-8 bg-[#006A4E] rotate-[15deg] origin-left" />
-                <MapPin className="h-6 w-6 text-[#006A4E]" />
-              </div>
+            {/* Animated Arrows and Markers */}
+            <div className="absolute top-[50%] left-[70%] transform -translate-x-1/2 -translate-y-1/2">
+              {/* Nepal Arrow */}
+              <div className="absolute h-0.5 w-16 bg-gradient-to-r from-[#FF9933] to-[#128807] -rotate-45 origin-left animate-to-nepal" />
+              <div className="absolute h-3 w-3 bg-[#128807] rounded-full transform translate-x-[60px] -translate-y-[60px] animate-to-nepal" />
+              
+              {/* Bhutan Arrow */}
+              <div className="absolute h-0.5 w-16 bg-gradient-to-r from-[#FF9933] to-[#0099CC] rotate-0 origin-left animate-to-bhutan" />
+              <div className="absolute h-3 w-3 bg-[#0099CC] rounded-full transform translate-x-[60px] -translate-y-[20px] animate-to-bhutan" />
+              
+              {/* Bangladesh Arrow */}
+              <div className="absolute h-0.5 w-16 bg-gradient-to-r from-[#FF9933] to-[#006A4E] rotate-45 origin-left animate-to-bangladesh" />
+              <div className="absolute h-3 w-3 bg-[#006A4E] rounded-full transform translate-x-[60px] translate-y-[20px] animate-to-bangladesh" />
             </div>
           </div>
 
