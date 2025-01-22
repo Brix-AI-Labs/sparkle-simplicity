@@ -16,7 +16,7 @@ const GlobalPresence = () => {
         <div className="relative">
           <div className="relative w-full h-[400px] md:h-[600px] mb-8 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1501854140801-50d01698950b" 
+              src="https://images.unsplash.com/photo-1524661135-423995f22d0b"
               alt="World Map"
               className="w-full h-full object-cover rounded-xl"
             />
