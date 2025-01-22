@@ -14,11 +14,12 @@ const GlobalPresence = () => {
         </div>
 
         <div className="relative">
-          <div className="relative w-full h-[400px] md:h-[600px] mb-8">
+          <div className="relative w-full h-[400px] md:h-[600px] mb-8 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-cool opacity-50"></div>
             <img 
-              src="/lovable-uploads/a478cc2f-dda0-491d-b166-2bf9e79e8cb3.png" 
+              src="/lovable-uploads/cf965368-4d90-4acb-9d4f-53264d8ebecd.png"
               alt="World Map"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain mix-blend-overlay opacity-90"
               loading="lazy"
               decoding="async"
             />
