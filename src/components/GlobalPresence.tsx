@@ -16,17 +16,19 @@ const GlobalPresence = () => {
         <div className="relative">
           <div className="relative w-full h-[400px] md:h-[600px] mb-8 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
             <div className="absolute inset-0 bg-gradient-cool opacity-50"></div>
+            {/* Updated world map image with proper styling */}
             <img 
               src="/lovable-uploads/cf965368-4d90-4acb-9d4f-53264d8ebecd.png"
-              alt="World Map"
-              className="w-full h-full object-contain mix-blend-overlay opacity-90"
+              alt="World Map Showing Global Presence"
+              className="w-full h-full object-cover opacity-90"
+              style={{ mixBlendMode: 'multiply' }}
               loading="lazy"
               decoding="async"
             />
             
             {/* Base Marker (India) */}
             <div className="absolute top-[50%] left-[70%] transform -translate-x-1/2 -translate-y-1/2">
-              <MapPin className="h-8 w-8 text-[#FF9933] drop-shadow-lg" />
+              <MapPin className="h-8 w-8 text-[#FF9933] animate-bounce shadow-lg" />
             </div>
 
             {/* Animated Arrows and Markers */}
@@ -46,25 +48,25 @@ const GlobalPresence = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
-            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm">
+            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <span className="inline-flex items-center text-[#FF9933] font-semibold">
                 <MapPin className="h-4 w-4 mr-1" />
                 India
               </span>
             </div>
-            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm">
+            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <span className="inline-flex items-center text-[#128807] font-semibold">
                 <MapPin className="h-4 w-4 mr-1" />
                 Nepal
               </span>
             </div>
-            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm">
+            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <span className="inline-flex items-center text-[#0099CC] font-semibold">
                 <MapPin className="h-4 w-4 mr-1" />
                 Bhutan
               </span>
             </div>
-            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm">
+            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <span className="inline-flex items-center text-[#006A4E] font-semibold">
                 <MapPin className="h-4 w-4 mr-1" />
                 Bangladesh
