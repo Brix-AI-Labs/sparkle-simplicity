@@ -20,45 +20,60 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
   };
 
   return (
-    <div className="relative w-full h-[500px] bg-highlight rounded-xl overflow-hidden mb-12 group">
-      <div 
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-        style={{ 
-          backgroundImage: `url(${backgrounds[productId as keyof typeof backgrounds]})`,
-          opacity: 0.25
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-accent via-accent/30 to-transparent" />
-      <div className="absolute inset-0 flex items-center justify-between px-12">
-        <div className="max-w-2xl">
-          <div className="space-y-6 animate-fade-up">
-            <div className="inline-block px-4 py-1 bg-accent/10 rounded-full text-accent text-sm font-medium mb-2">
-              Mega Light Products
+    <div className="relative w-full h-[600px] bg-gradient-cool rounded-xl overflow-hidden mb-12 group">
+      <div className="absolute inset-0 flex">
+        {/* Left Content Section */}
+        <div className="w-3/5 p-16 flex flex-col justify-center relative z-10">
+          <div className="space-y-8 animate-fade-up">
+            <div className="flex items-center space-x-3">
+              <div className="h-1 w-12 bg-primary"></div>
+              <span className="text-sm font-medium text-primary uppercase tracking-wider">
+                Mega Light Products
+              </span>
             </div>
-            <h1 className="text-6xl font-bold uppercase tracking-tight text-accent">
-              {productId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+            
+            <h1 className="text-7xl font-bold text-accent space-y-2">
+              <span className="block gradient-text">
+                {productId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+              </span>
             </h1>
-            <p className="text-xl font-light leading-relaxed text-accent/80 max-w-xl">
+            
+            <p className="text-2xl font-light leading-relaxed text-muted max-w-xl">
               {slogans[productId as keyof typeof slogans]}
             </p>
-            <div className="flex gap-4">
-              <button className="px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors">
-                Learn More
+            
+            <div className="flex gap-6 pt-4">
+              <button className="button-primary flex items-center gap-2 group">
+                <span>Explore Features</span>
+                <svg 
+                  className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </button>
-              <button className="px-6 py-3 border border-accent/20 text-accent rounded-lg hover:bg-accent/10 transition-colors">
-                View Details
+              <button className="button-secondary">
+                View Specifications
               </button>
             </div>
           </div>
         </div>
-        <div className="w-1/3 h-full flex items-center justify-center animate-fade-in">
-          <div className="relative w-full h-[400px]">
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-lg rounded-2xl" />
-            <img 
-              src={backgrounds[productId as keyof typeof backgrounds]}
-              alt={`${productId} poster`}
-              className="absolute inset-0 w-full h-full object-contain p-8 hover:scale-105 transition-transform duration-300"
-            />
+
+        {/* Right Image Section */}
+        <div className="absolute right-0 top-0 w-2/5 h-full">
+          <div className="relative w-full h-full">
+            <div className="absolute inset-0 bg-gradient-warm opacity-30"></div>
+            <div className="absolute inset-0 flex items-center justify-center p-12">
+              <div className="relative w-full h-full glass-card rounded-3xl overflow-hidden group-hover:scale-105 transition-all duration-500">
+                <img 
+                  src={backgrounds[productId as keyof typeof backgrounds]}
+                  alt={`${productId} product`}
+                  className="w-full h-full object-contain p-8 animate-float"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
