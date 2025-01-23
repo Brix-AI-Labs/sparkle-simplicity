@@ -206,6 +206,21 @@ const productData = {
             size: "400g", 
             image: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png",
             description: "Multi-purpose cleaning powder"
+          },
+          {
+            size: "500g",
+            image: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png",
+            description: "Standard cleaning pack"
+          },
+          {
+            size: "1kg",
+            image: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png",
+            description: "Professional cleaning pack"
+          },
+          {
+            size: "10kg",
+            image: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png",
+            description: "Industrial cleaning pack"
           }
         ]
       }
