@@ -13,40 +13,49 @@ const GlobalPresence = () => {
           </p>
         </div>
 
-        <div className="relative">
-          <div className="relative w-full h-[400px] md:h-[600px] mb-8 bg-white/50 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b"
-              alt="World Map"
-              className="w-full h-full object-cover rounded-xl"
-            />
+        <div className="max-w-4xl mx-auto bg-white/50 backdrop-blur-sm rounded-xl p-8 shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-primary mb-4">Our Markets</h3>
+              <p className="text-muted">
+                Starting from India, we've successfully expanded our operations to neighboring countries, 
+                bringing quality cleaning solutions to millions of households across South Asia.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-primary mb-4">Distribution Network</h3>
+              <p className="text-muted">
+                Our robust distribution network ensures reliable product delivery and excellent customer service 
+                across all our operating regions.
+              </p>
+            </div>
           </div>
+        </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
-            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <span className="inline-flex items-center text-[#FF9933] font-semibold">
-                <MapPin className="h-4 w-4 mr-1" />
-                India
-              </span>
-            </div>
-            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <span className="inline-flex items-center text-[#128807] font-semibold">
-                <MapPin className="h-4 w-4 mr-1" />
-                Nepal
-              </span>
-            </div>
-            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <span className="inline-flex items-center text-[#0099CC] font-semibold">
-                <MapPin className="h-4 w-4 mr-1" />
-                Bhutan
-              </span>
-            </div>
-            <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <span className="inline-flex items-center text-[#006A4E] font-semibold">
-                <MapPin className="h-4 w-4 mr-1" />
-                Bangladesh
-              </span>
-            </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-center mt-8">
+          <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <span className="inline-flex items-center text-[#FF9933] font-semibold">
+              <MapPin className="h-4 w-4 mr-1" />
+              India
+            </span>
+          </div>
+          <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <span className="inline-flex items-center text-[#128807] font-semibold">
+              <MapPin className="h-4 w-4 mr-1" />
+              Nepal
+            </span>
+          </div>
+          <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <span className="inline-flex items-center text-[#0099CC] font-semibold">
+              <MapPin className="h-4 w-4 mr-1" />
+              Bhutan
+            </span>
+          </div>
+          <div className="p-4 bg-white/50 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <span className="inline-flex items-center text-[#006A4E] font-semibold">
+              <MapPin className="h-4 w-4 mr-1" />
+              Bangladesh
+            </span>
           </div>
         </div>
 
