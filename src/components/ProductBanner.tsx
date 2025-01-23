@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface ProductBannerProps {
   productId: string;
 }
 
 const ProductBanner = ({ productId }: ProductBannerProps) => {
+  const navigate = useNavigate();
+  
   const slogans = {
     'floor-cleaner': 'Keep your home and room clean with mega light floor cleaner at all times.',
     'liquid-blue': 'Experience the magic of cleaning with one product that washes, cleans, sparkles, and shines!',
@@ -17,6 +20,22 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
     'liquid-blue': '/lovable-uploads/fb74d737-fca2-4214-b994-18343e6e4778.png',
     'detergent-powder': '/lovable-uploads/54e15bf1-3df2-45ee-ada8-0db9f920aa30.png',
     'bleaching-powder': '/lovable-uploads/890f0b7d-48dc-4655-b767-591e1bedbf4e.png'
+  };
+
+  const handleExploreFeatures = () => {
+    // Scroll to features section
+    const featuresSection = document.getElementById('features-section');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleViewSpecifications = () => {
+    // Scroll to specifications section
+    const specificationsSection = document.getElementById('specifications-section');
+    if (specificationsSection) {
+      specificationsSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -43,7 +62,10 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
             </p>
             
             <div className="flex gap-6 pt-4">
-              <button className="button-primary flex items-center gap-2 group">
+              <button 
+                onClick={handleExploreFeatures}
+                className="button-primary flex items-center gap-2 group"
+              >
                 <span>Explore Features</span>
                 <svg 
                   className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
@@ -54,7 +76,10 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
-              <button className="button-secondary">
+              <button 
+                onClick={handleViewSpecifications}
+                className="button-secondary"
+              >
                 View Specifications
               </button>
             </div>
