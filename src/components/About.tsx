@@ -4,7 +4,7 @@ const About = () => {
   const stats = [
     {
       icon: Factory,
-      value: "25+",
+      value: "20+",
       label: "Years of Excellence"
     },
     {
