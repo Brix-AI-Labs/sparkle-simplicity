@@ -235,120 +235,112 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background pt-20">
-      <div className="container mx-auto px-4 py-8">
-        <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 mb-8">
-          <ArrowLeft className="mr-2 h-4 w-4" />
+    <div className="min-h-screen bg-background">
+      {/* Back button - now more visible on mobile */}
+      <div className="container mx-auto px-4 pt-20 pb-4">
+        <Link 
+          to="/" 
+          className="inline-flex items-center text-primary hover:text-primary/80 text-lg"
+        >
+          <ArrowLeft className="mr-2 h-5 w-5" />
           Back to Products
         </Link>
-        
-        <ProductBanner productId={productId as string} />
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <Card id="specifications-section">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Info className="h-5 w-5 text-primary" />
-                  Product Specifications
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <dl className="space-y-4">
-                  {Object.entries(product.specifications).map(([key, value]) => (
-                    <div key={key}>
-                      <dt className="font-medium text-accent">{key.charAt(0).toUpperCase() + key.slice(1)}</dt>
-                      <dd className="text-accent/80 mt-1">{value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </CardContent>
-            </Card>
+      </div>
 
-            <Card id="features-section">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <List className="h-5 w-5 text-primary" />
-                  Features
+      {/* Product Banner - adjusted for mobile */}
+      <div className="container mx-auto px-4">
+        <ProductBanner productId={productId as string} />
+      </div>
+
+      {/* Main content - improved mobile layout */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Specifications Section */}
+          <Card id="specifications-section" className="w-full">
+            <CardHeader className="space-y-1">
+              <CardTitle className="flex items-center gap-2 text-xl md:text-2xl">
+                <Info className="h-6 w-6 text-primary" />
+                Product Specifications
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <dl className="space-y-4">
+                {Object.entries(product.specifications).map(([key, value]) => (
+                  <div key={key} className="bg-highlight p-4 rounded-lg">
+                    <dt className="font-medium text-accent mb-1">{key.charAt(0).toUpperCase() + key.slice(1)}</dt>
+                    <dd className="text-accent/80">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </CardContent>
+          </Card>
+
+          {/* Features Section */}
+          <Card id="features-section" className="w-full">
+            <CardHeader className="space-y-1">
+              <CardTitle className="flex items-center gap-2 text-xl md:text-2xl">
+                <List className="h-6 w-6 text-primary" />
+                Features
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {product.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3 bg-highlight p-4 rounded-lg">
+                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-accent/80">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Variants Section - improved mobile layout */}
+        <div className="mt-8">
+          {product.variants.map((variant, index) => (
+            <Card key={index} className="mb-6">
+              <CardHeader className="bg-primary/5">
+                <CardTitle className="flex items-center gap-2 text-xl md:text-2xl">
+                  <Package className="h-6 w-6 text-primary" />
+                  {variant.name}
                 </CardTitle>
+                <p className="text-accent/80 mt-2">{variant.description}</p>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-accent/80">
-                      <Check className="h-4 w-4 text-primary mr-2" />
-                      {feature}
-                    </li>
+              <CardContent className="pt-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  {variant.sizes.map((size, sizeIndex) => (
+                    <div 
+                      key={sizeIndex} 
+                      className="bg-highlight rounded-lg p-4 text-center transition-all duration-300 hover:shadow-md"
+                    >
+                      <div className="aspect-square mb-4 relative overflow-hidden rounded-lg bg-white p-4">
+                        <img 
+                          src={size.image} 
+                          alt={`${product.name} ${variant.name} ${size.size}`}
+                          className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h4 className="font-semibold text-lg mb-2">{size.size}</h4>
+                      <p className="text-sm text-accent/70 mb-2">{size.description}</p>
+                      {size.coverage && (
+                        <div className="flex items-center justify-center text-xs text-accent/60 gap-1">
+                          <Scale className="h-3 w-3" />
+                          Coverage: {size.coverage}
+                        </div>
+                      )}
+                      {size.dilutionRatio && (
+                        <div className="text-xs text-accent/60 mt-1">
+                          Dilution Ratio: {size.dilutionRatio}
+                        </div>
+                      )}
+                    </div>
                   ))}
-                </ul>
+                </div>
               </CardContent>
             </Card>
-          </div>
-          
-          <div className="space-y-12">
-            {product.variants.map((variant, index) => (
-              <Card key={index} className="overflow-hidden">
-                <CardHeader className="bg-primary/5">
-                  <CardTitle className="flex items-center gap-2">
-                    <Package className="h-5 w-5 text-primary" />
-                    {variant.name}
-                  </CardTitle>
-                  <p className="text-accent/80 mt-2">{variant.description}</p>
-                </CardHeader>
-                <CardContent className="pt-6">
-                  <div className="space-y-6">
-                    {variant.benefits && (
-                      <div className="space-y-2">
-                        <h4 className="font-medium">Key Benefits</h4>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                          {variant.benefits.map((benefit, idx) => (
-                            <li key={idx} className="flex items-center text-accent/80">
-                              <Check className="h-4 w-4 text-primary mr-2" />
-                              {benefit}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    
-                    <div>
-                      <h4 className="font-medium mb-4">Available Sizes</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {variant.sizes.map((size, sizeIndex) => (
-                          <div 
-                            key={sizeIndex} 
-                            className="group bg-highlight rounded-lg p-4 text-center transition-all duration-300 hover:shadow-md"
-                          >
-                            <div className="aspect-square mb-4 relative overflow-hidden rounded-lg bg-white">
-                              <img 
-                                src={size.image} 
-                                alt={`${product.name} ${variant.name} ${size.size}`}
-                                className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
-                                loading="lazy"
-                              />
-                            </div>
-                            <h4 className="font-semibold text-lg mb-1">{size.size}</h4>
-                            <p className="text-sm text-accent/70 mb-2">{size.description}</p>
-                            {size.coverage && (
-                              <div className="flex items-center justify-center text-xs text-accent/60 gap-1">
-                                <Scale className="h-3 w-3" />
-                                Coverage: {size.coverage}
-                              </div>
-                            )}
-                            {size.dilutionRatio && (
-                              <div className="text-xs text-accent/60 mt-1">
-                                Dilution Ratio: {size.dilutionRatio}
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </div>
