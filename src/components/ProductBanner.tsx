@@ -13,10 +13,10 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
   };
 
   const backgrounds = {
-    'floor-cleaner': '/lovable-uploads/6244fb4d-88fc-4617-8f21-4a04a78c5bab.png',
-    'liquid-blue': '/lovable-uploads/89aef022-140e-4bac-ba01-02bb566d04c1.png',
-    'detergent-powder': '/lovable-uploads/95e6e5bd-b034-4a80-9a71-dd0cc4a20887.png',
-    'bleaching-powder': '/lovable-uploads/6ef7d9cb-8186-4651-b8f9-875eea0dd64e.png'
+    'floor-cleaner': '/lovable-uploads/c0deea0b-6469-4c82-986e-c2ed9ea1c5d2.png',
+    'liquid-blue': '/lovable-uploads/fb74d737-fca2-4214-b994-18343e6e4778.png',
+    'detergent-powder': '/lovable-uploads/54e15bf1-3df2-45ee-ada8-0db9f920aa30.png',
+    'bleaching-powder': '/lovable-uploads/890f0b7d-48dc-4655-b767-591e1bedbf4e.png'
   };
 
   return (
