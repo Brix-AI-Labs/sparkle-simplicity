@@ -138,7 +138,7 @@ const productData = {
   },
   "detergent-powder": {
     name: "Detergent Powder",
-    description: "High-performance washing powder with superior cleaning power. Perfect for both machine and hand wash.",
+    description: "High-performance washing powder with color granules, white particles, and high foam technology for superior cleaning results.",
     longDescription: "Our premium detergent powder is formulated with advanced cleaning technology that removes even the toughest stains while being gentle on your clothes. Suitable for both machine and hand wash, it leaves your clothes fresh and clean.",
     specifications: {
       composition: "Active enzymes, Surfactants, Optical brighteners",
@@ -159,14 +159,19 @@ const productData = {
         description: "2X More Power for Deep Cleaning",
         sizes: [
           { 
-            size: "500g", 
+            size: "900g", 
             image: "/lovable-uploads/4612cec1-0fb5-4726-bf74-261c5b477462.png",
             description: "Trial pack"
           },
           { 
-            size: "1kg", 
+            size: "2kg", 
             image: "/lovable-uploads/a1ba60a6-2af8-4350-853c-5d5be200856b.png",
             description: "Regular family pack"
+          },
+          { 
+            size: "3kg", 
+            image: "/lovable-uploads/a1ba60a6-2af8-4350-853c-5d5be200856b.png",
+            description: "Economy pack"
           }
         ]
       }
@@ -182,7 +187,7 @@ const productData = {
   },
   "bleaching-powder": {
     name: "Bleaching Powder",
-    description: "Powerful bleaching powder for effective disinfection and cleaning. Ideal for commercial and household use.",
+    description: "Professional-grade bleaching powder for powerful disinfection and whitening, ideal for multiple applications.",
     longDescription: "Our professional-grade bleaching powder provides powerful disinfection and cleaning for both commercial and household applications. It effectively sanitizes surfaces while removing tough stains and dirt.",
     specifications: {
       composition: "Calcium hypochlorite, Stabilizers",
@@ -206,21 +211,6 @@ const productData = {
             size: "400g", 
             image: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png",
             description: "Multi-purpose cleaning powder"
-          },
-          {
-            size: "500g",
-            image: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png",
-            description: "Standard cleaning pack"
-          },
-          {
-            size: "1kg",
-            image: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png",
-            description: "Professional cleaning pack"
-          },
-          {
-            size: "10kg",
-            image: "/lovable-uploads/f64ebcc9-1078-45ea-8699-d3c903346072.png",
-            description: "Industrial cleaning pack"
           }
         ]
       }

@@ -80,7 +80,7 @@ const Products = () => {
         {
           name: "Power Wash",
           description: "Advanced stain removal with fabric protection",
-          sizes: ["400g", "900g", "2kg", "3kg"]
+          sizes: ["900g", "2kg", "3kg"]
         }
       ],
       keyBenefits: [
@@ -105,7 +105,7 @@ const Products = () => {
         {
           name: "Regular",
           description: "Professional strength disinfectant & whitener",
-          sizes: ["400g", "500g", "1kg", "10kg"]
+          sizes: ["400g"]
         }
       ],
       keyBenefits: [
