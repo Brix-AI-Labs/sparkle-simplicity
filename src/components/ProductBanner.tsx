@@ -23,7 +23,6 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
   };
 
   const handleExploreFeatures = () => {
-    // Scroll to features section
     const featuresSection = document.getElementById('features-section');
     if (featuresSection) {
       featuresSection.scrollIntoView({ behavior: 'smooth' });
@@ -31,7 +30,6 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
   };
 
   const handleViewSpecifications = () => {
-    // Scroll to specifications section
     const specificationsSection = document.getElementById('specifications-section');
     if (specificationsSection) {
       specificationsSection.scrollIntoView({ behavior: 'smooth' });
@@ -64,7 +62,7 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
             <div className="flex gap-6 pt-4">
               <button 
                 onClick={handleExploreFeatures}
-                className="button-primary flex items-center gap-2 group"
+                className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 group cursor-pointer"
               >
                 <span>Explore Features</span>
                 <svg 
@@ -78,7 +76,7 @@ const ProductBanner = ({ productId }: ProductBannerProps) => {
               </button>
               <button 
                 onClick={handleViewSpecifications}
-                className="button-secondary"
+                className="px-6 py-3 bg-white text-primary border-2 border-primary rounded-lg hover:bg-primary/10 transition-all duration-300 cursor-pointer"
               >
                 View Specifications
               </button>

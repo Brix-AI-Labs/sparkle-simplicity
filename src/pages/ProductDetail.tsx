@@ -246,7 +246,7 @@ const ProductDetail = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <Card>
+            <Card id="specifications-section">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Info className="h-5 w-5 text-primary" />
@@ -265,19 +265,19 @@ const ProductDetail = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card id="features-section">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <List className="h-5 w-5 text-primary" />
-                  Applications
+                  Features
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
-                  {product.applications.map((application, index) => (
+                  {product.features.map((feature, index) => (
                     <li key={index} className="flex items-center text-accent/80">
                       <Check className="h-4 w-4 text-primary mr-2" />
-                      {application}
+                      {feature}
                     </li>
                   ))}
                 </ul>
