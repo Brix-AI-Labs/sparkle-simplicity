@@ -3,6 +3,7 @@ import { ArrowLeft, Check, Package, Info, Scale, List } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProductBanner from '../components/ProductBanner';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useMediaQuery } from '@/hooks/use-mobile';
 
 const productData = {
   "floor-cleaner": {
@@ -229,6 +230,7 @@ const productData = {
 const ProductDetail = () => {
   const { productId } = useParams();
   const product = productData[productId as keyof typeof productData];
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   if (!product) {
     return <div>Product not found</div>;
@@ -236,7 +238,7 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Back button - now more visible on mobile */}
+      {/* Back button */}
       <div className="container mx-auto px-4 pt-20 pb-4">
         <Link 
           to="/" 
@@ -247,12 +249,14 @@ const ProductDetail = () => {
         </Link>
       </div>
 
-      {/* Product Banner - adjusted for mobile */}
-      <div className="container mx-auto px-4">
-        <ProductBanner productId={productId as string} />
-      </div>
+      {/* Product Banner - only shown on desktop */}
+      {isDesktop && (
+        <div className="container mx-auto px-4">
+          <ProductBanner productId={productId as string} />
+        </div>
+      )}
 
-      {/* Main content - improved mobile layout */}
+      {/* Main content */}
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Specifications Section */}
