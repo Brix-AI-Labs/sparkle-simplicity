@@ -54,8 +54,24 @@ const Products = () => {
       variants: [
         {
           name: "Regular",
-          description: "Perfect for both machine and hand wash",
-          sizes: ["100ml", "200ml", "500ml"]
+          description: "Hi-Glo Formula for Sparkling White",
+          sizes: [
+            {
+              size: "100 ml",
+              description: "Travel-friendly size",
+              image: "/lovable-uploads/011df389-6efa-4a82-aac6-20bc358b9a10.png"
+            },
+            {
+              size: "500 ml + 20% Extra",
+              description: "Family pack with extra value",
+              image: "/lovable-uploads/011df389-6efa-4a82-aac6-20bc358b9a10.png"
+            },
+            {
+              size: "1 liter + 10% Extra",
+              description: "Bulk pack for regular use",
+              image: "/lovable-uploads/011df389-6efa-4a82-aac6-20bc358b9a10.png"
+            }
+          ]
         }
       ],
       keyBenefits: [
@@ -160,7 +176,7 @@ const Products = () => {
                     <div key={idx} className="text-sm">
                       <span className="font-medium text-primary">{variant.name}</span>
                       <div className="text-accent/60 text-xs mt-1">
-                        Sizes: {variant.sizes.join(", ")}
+                        Sizes: {variant.sizes.map(s => s.size).join(", ")}
                       </div>
                     </div>
                   ))}
